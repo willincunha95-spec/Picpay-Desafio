@@ -29,7 +29,7 @@ public class TransactionService {
     @Autowired
     private NotificationService notificationService;
 
-    public void createTransaction(TransactionDTO transaction)throws Exception{
+    public Transaction createTransaction(TransactionDTO transaction)throws Exception{
         User sender = this.userService.findUserById(transaction.senderId());
         User receiver = this.userService.findUserById(transaction.ReceiverId());
 
@@ -56,7 +56,7 @@ public class TransactionService {
         this.notificationService.senderNotification(receiver , "Transação recebida com sucesso ");
 
 
-
+        return newtransaction;
     }
 
 
