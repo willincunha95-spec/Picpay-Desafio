@@ -25,6 +25,7 @@ public class User {
     private String lastName;
 
 
+
     @Column(unique = true)
     private String document;
 
@@ -40,6 +41,7 @@ public class User {
     public  User(UserDTO data) {
         this.firstName = data.firstName();
         this.lastName = data.lastName();
+        this.document = data.document();
         this.balance = data.balance();
         this.userType = data.userType();
         this.email = data.email();
